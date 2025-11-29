@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Habit Tracker</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <div class="app-container">
+        <header>
+            <div class="month-nav">
+                <button id="prev-month-btn" class="nav-btn"><i class="fa-solid fa-chevron-left"></i></button>
+                <h1 id="month-title">November</h1>
+                <button id="next-month-btn" class="nav-btn"><i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+            <div class="header-stats">
+                <div class="stat-box" onclick="window.location.href='stats.html'">
+                    <span class="stat-label">Tasks Overview</span>
+                    <span class="stat-value">
+                        <span id="total-completed">0</span> / <span id="total-habits">0</span>
+                    </span>
+                </div>
+                <div class="stat-box progress-box">
+                    <span class="stat-label">Progress</span>
+                    <div class="progress-container">
+                        <div class="mini-progress-bg">
+                            <div class="mini-progress-fill" id="global-progress"></div>
+                        </div>
+                        <span class="progress-percentage" id="progress-percentage">0%</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="tracker-grid-container">
+            <table id="tracker-table">
+                <thead>
+                    <tr id="header-row">
+                        <th class="habit-col-header clickable-header"
+                            onclick="window.location.href='manage-habits.html'">My Habits<i
+                                class="fa-solid fa-pen-to-square" style="font-size: 1rem; margin-left: 8px;"></i></th>
+                        <!-- Days will be injected here -->
+                    </tr>
+                </thead>
+                <tbody id="tracker-body">
+                    <!-- Habits rows will be injected here -->
+                </tbody>
+                <tfoot id="tracker-footer">
+                    <!-- Daily stats will be injected here -->
+                </tfoot>
+            </table>
+        </div>
+
+        <div class="bottom-panel">
+            <div class="graph-panel">
+                <h3>Monthly Progress</h3>
+                <div class="graph-container">
+                    <canvas id="progressChart"></canvas>
+                </div>
+            </div>
+
+            <div class="analysis-panel">
+                <h3>Analysis</h3>
+                <div class="analysis-table-container">
+                    <table class="analysis-table">
+                        <thead>
+                            <tr>
+                                <th>Goal</th>
+                                <th>Actual</th>
+                                <th>Progress</th>
+                            </tr>
+                        </thead>
+                        <tbody id="analysis-body">
+                            <!-- Analysis rows injected here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

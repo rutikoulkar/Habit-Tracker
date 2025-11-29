@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Habits</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background-color: #f1f5f9;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            color: #475569;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.2s;
+            cursor: pointer;
+        }
+
+        .back-btn:hover {
+            background-color: #e2e8f0;
+            color: #1e293b;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="app-container">
+        <header>
+            <a href="index.html" class="back-btn">
+                <i class="fa-solid fa-arrow-left"></i> Back to Tracker
+            </a>
+            <h1>Manage Habits</h1>
+        </header>
+
+        <div class="management-container">
+            <div class="add-habit-section">
+                <h3>Add New Habit</h3>
+                <div class="input-group">
+                    <input type="text" id="habit-name" placeholder="Habit Name (e.g., Morning Run)">
+                    <input type="text" id="habit-icon" placeholder="Icon (emoji or text)">
+                    <button id="save-habit-btn" class="primary-btn">Add Habit</button>
+                </div>
+            </div>
+
+            <div class="habit-list-section">
+                <h3>Your Habits</h3>
+                <ul id="habit-list" class="habit-list">
+                    <!-- Habits will be injected here -->
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="manage-habits.js"></script>
+</body>
+
+</html>
